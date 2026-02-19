@@ -85,9 +85,10 @@ def normal_pdf(x, mu, sigma):
         1/(sqrt(2π)σ) * exp(-(x-μ)^2 / (2σ^2))
     """
     def normal_pdf(x, mu, sigma):
-    coeff = 1 / (np.sqrt(2 * np.pi) * float(sigma))
-    exponent = -((float(x) - float(mu)) ** 2) / (2 * float(sigma) ** 2)
-    return float(coeff * np.exp(exponent))
+        coeff = 1 / (np.sqrt(2 * np.pi) * float(sigma))
+        exponent = -((float(x) - float(mu)) ** 2) / (2 * float(sigma) ** 2)
+        return float(coeff * np.exp(exponent))
+
 
 
 def normal_histogram_analysis(mu_values,
