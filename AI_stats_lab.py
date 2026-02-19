@@ -84,8 +84,10 @@ def normal_pdf(x, mu, sigma):
     Normal PDF:
         1/(sqrt(2π)σ) * exp(-(x-μ)^2 / (2σ^2))
     """
-    return (1 / (math.sqrt(2 * math.pi) * sigma)) * \
-           math.exp(-((x - mu) ** 2) / (2 * sigma ** 2))
+    def normal_pdf(x, mu, sigma):
+        coeff = 1 / (np.sqrt(2 * np.pi) * sigma)
+        exponent = -((x - mu) ** 2) / (2 * sigma ** 2)
+        return coeff * np.exp(exponent)
 
 
 def normal_histogram_analysis(mu_values,
@@ -142,14 +144,14 @@ def uniform_mean(a, b):
     """
     (a + b) / 2
     """
-    return (a + b) / 2
+    return float(a + b) / 2
 
 
 def uniform_variance(a, b):
     """
     (b - a)^2 / 12
     """
-    return ((b - a) ** 2) / 12
+    return float((b - a) ** 2) / 12
 
 
 def uniform_histogram_analysis(a_values,
